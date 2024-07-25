@@ -1,0 +1,151 @@
+{
+  "object_id": "https://biocomputeobject.org/BCO_000494/0.1",
+  "spec_version": "https://w3id.org/ieee/ieee-2791-schema/2791object.json",
+  "etag": "0bd768e2788ee7114c34005231b0e56ff8348c3e3161b761050e609564b3d865",
+  "provenance_domain": {
+    "name": "CIVIC Biomarkers",
+    "version": "0.1",
+    "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+    "created": "2024-05-09T16:31:41",
+    "modified": "2024-05-30T18:51:28.821Z",
+    "contributors": [
+      {
+        "name": "Vania Ballesteros Prieto",
+        "affiliation": "George Washington University",
+        "email": "vania.ballesterosprieto@gwmail.gwu.edu",
+        "contribution": [
+          "authoredBy",
+          "contributedBy",
+          "createdBy",
+          "curatedBy"
+        ]
+      },
+      {
+        "name": "Daniall Masood",
+        "affiliation": "George Washinton University",
+        "email": "daniallmasood@gwu.edu",
+        "contribution": [
+          "createdWith",
+          "contributedBy"
+        ]
+      },
+      {
+        "name": "Kate Warner",
+        "affiliation": "The George Washington University",
+        "contribution": [
+          "createdBy"
+        ],
+        "email": "k.warner1@gwu.edu"
+      }
+    ]
+  },
+  "usability_domain": [
+    "For this data set, we pulled biomarker data from CIVIC. From the raw TSV, the data was cleaned and extracted. Data that was pulled were the biomarkers, assessed biomarker entity, specimen, and condition for the biomarker. Condition ID, specimen ID, and assessed biomarker entity ID were mapped from relevant external resources to the table. The data was then reprocessed and cleaned to be mapped into the new biomarker data model that was set by the Biomarker Partnership. Temporary ID's were assigned based on the core fields (assessed_biomarker_entity_id, assessed_biomarker_entity, biomarker, and condition). The primary use case for this data set is to see information on human cancer biomarkers."
+  ],
+  "description_domain": {
+    "pipeline_steps": [
+      {
+        "step_number": 1,
+        "name": "civic.ipynb",
+        "description": "Extracted and mapped CIVIC data into the biomarker data model.",
+        "version": "0.1",
+        "input_list": [
+          {
+            "filename": "civic.tsv",
+            "access_time": "2024-05-09T04:00:00.000Z",
+            "uri": "https://github.com/biomarker-ontology/biomarker-partnership/blob/data_conversion/data/results/tables/civic.tsv.zip"
+          }
+        ],
+        "output_list": [
+          {
+            "filename": "transformed_civic.tsv",
+            "access_time": "2024-05-09T04:00:00.000Z",
+            "uri": "https://github.com/biomarker-ontology/biomarker-partnership/blob/data_conversion/data/results/tables/transformed_civic.tsv.zip"
+          }
+        ]
+      }
+    ],
+    "keywords": [
+      "Cancer",
+      "CIVIC",
+      "Biomarker"
+    ]
+  },
+  "io_domain": {
+    "input_subdomain": [
+      {
+        "uri": {
+          "filename": "civic.tsv",
+          "uri": "https://github.com/biomarker-ontology/biomarker-partnership/blob/data_conversion/data/results/tables/civic.tsv",
+          "access_time": "2024-05-09T17:34:42.000Z"
+        }
+      }
+    ],
+    "output_subdomain": [
+      {
+        "mediatype": "text/tsv",
+        "uri": {
+          "filename": "transformed_civic.tsv",
+          "uri": "https://github.com/biomarker-ontology/biomarker-partnership/blob/data_conversion/data/results/tables/transformed_civic.tsv",
+          "access_time": "2024-05-09T04:00:00.000Z"
+        }
+      }
+    ]
+  },
+  "execution_domain": {
+    "script": [
+      {
+        "uri": {
+          "uri": "https://github.com/biomarker-ontology/biomarker-partnership/blob/data_conversion/src/civic.ipynb",
+          "filename": "civic.ipynb",
+          "access_time": "2024-05-09T17:35:09.000Z"
+        }
+      }
+    ],
+    "script_driver": "Python Script",
+    "software_prerequisites": [
+      {
+        "name": "Python",
+        "version": "3.19",
+        "uri": {
+          "uri": "https://www.python.org/ftp/python/3.10.0/",
+          "access_time": "2024-05-09T04:00:00.000Z"
+        }
+      }
+    ],
+    "external_data_endpoints": [
+      {
+        "name": "GitHub.com/Biomarker-Partnership",
+        "url": "https://github.com/clinical-biomarkers"
+      }
+    ],
+    "environment_variables": {
+      "EDITOR": "JUPYTER NOTEBOOK"
+    }
+  },
+  "extension_domain": [
+    {
+      "dataset_extension": {
+        "dataset_categories": [
+          {
+            "category_value": "tsv",
+            "category_name": "file_type"
+          }
+        ],
+        "additional_license": {
+          "data_license": "https://creativecommons.org/licenses/by/4.0/",
+          "script_license": "https://www.gnu.org/licenses/gpl-3.0.en.html"
+        }
+      },
+      "extension_schema": "https://www.w3id.org/biocompute/extension_domain/1.2.0/dataset/dataset_extension.json"
+    }
+  ],
+  "error_domain": {
+    "empirical_error": {
+      "empirical_error": "null"
+    },
+    "algorithmic_error": {
+      "algorithmic_error": "null"
+    }
+  }
+}
