@@ -52,7 +52,7 @@ def get_id_for():
     id_for_list = input("Enter the list of your IdFors separated by commas").split(',')
     return id_for_list
 
-def create_ldh(jsonfile, name):
+def create_ldh(jsonfile, author_name):
     file = open(jsonfile)
     data = json.load(file)
     contents = {}
@@ -63,7 +63,7 @@ def create_ldh(jsonfile, name):
     contents['entId'] = get_EntId(data)
     contents['entIri'] = get_EntIri(data)
     contents['entAliases'] = [contents['entId'], contents['entIri'], contents['entType']]
-    contents['modifier'] = name
+    contents['modifier'] = author_name
     contents['modified'] = get_time()
 
 
@@ -71,9 +71,5 @@ def create_ldh(jsonfile, name):
 
     print(contents)
 
-    with open('example.json', 'w') as f:
+    with open('result.json', 'w') as f:
         json.dump(contents, f, indent=4)
-
-
-
-create_ldh('CIVIC Biomarkers.json', "Aditya Lahiri")
